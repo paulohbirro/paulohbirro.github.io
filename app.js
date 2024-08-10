@@ -1,4 +1,4 @@
-// Aplicando máscara de moeda brasileira (R$)
+// Aplicando máscara de moeda brasileira (R$) que aparece conforme o usuário digita
 Inputmask({
     alias: "currency",
     prefix: "R$ ",
@@ -6,7 +6,9 @@ Inputmask({
     radixPoint: ",",
     digits: 2,
     autoUnmask: true,
-    removeMaskOnSubmit: true
+    removeMaskOnSubmit: true,
+    autoGroup: true,
+    rightAlign: false
 }).mask(document.querySelectorAll("input"));
 
 document.getElementById('fuelForm').addEventListener('submit', function(event) {
@@ -30,4 +32,3 @@ document.getElementById('fuelForm').addEventListener('submit', function(event) {
         resultado.classList.add("text-danger");
     }
 });
-
