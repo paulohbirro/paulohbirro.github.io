@@ -194,3 +194,30 @@
     display: inline-block;
     margin-right: 5px;
 }
+
+
+.blog-post-thumb {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.blog-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.main-button {
+    margin-top: auto; /* Faz o botão ficar no final do conteúdo */
+    display: block; /* Garante que o botão ocupe toda a largura disponível */
+    width: 100%; /* Faz o botão ter a mesma largura do conteúdo */
+    text-align: center; /* Alinha o texto do botão no centro */
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
