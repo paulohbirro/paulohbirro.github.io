@@ -1,3 +1,75 @@
+/* Estilo para a área do cabeçalho */
+.header-area {
+    background-color: #16170e;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav li {
+    margin-right: 20px;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito de hover e estilo do link */
+.nav a.menu-item:hover {
+    background-color: #007bff; /* Altere para a cor que desejar */
+    color: white; /* Cor do texto quando o link for ativado */
+    border-radius: 5px; /* Bordas arredondadas, opcional */
+}
+
+/* Estilo do menu quando estiver colapsado (menu-trigger) */
+.menu-trigger {
+    display: none;
+}
+
+/* Ajuste para dispositivos menores */
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav li {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .menu-trigger {
+        display: block;
+        color: #fff;
+        cursor: pointer;
+    }
+    .menu-trigger:hover {
+        color: #007bff;
+    }
+}
+
+
 /* CSS para as mini boxes */
 .mini-box {
     display: flex;
