@@ -68,7 +68,25 @@
         color: #007bff;
     }
 }
+@media (max-width: 768px) {
+    .responsive-logo {
+        max-width: 120px;
+    }
+}
 
+.responsive-logo {
+    width: 100%;
+    max-width: 150px; /* Tamanho máximo */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem */
+}
+
+@media (max-width: 576px) {
+    .responsive-logo {
+        max-width: 100px;
+    }
+}
 
 /* CSS para as mini boxes */
 .mini-box {
