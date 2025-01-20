@@ -607,35 +607,31 @@ https://templatemo.com/tm-535-softy-pinko
             <!-- ***** Texto de Contato Início ***** -->
             <!-- ***** Texto de Contato Fim ***** -->
 
-            <!-- ***** Formulário de Contato Início ***** -->
-            <div class="col-lg-12 col-md-6 col-sm-12">
-                <div class="contact-form">
-                    <form id="contact" action="envia_mensagem.php" method="post">
-                      <div class="row">
-                        <div class="col-lg-6 col-md-12 col-sm-12">
-                          <fieldset>
-                            <input name="name" type="text" class="form-control" id="name" placeholder="Nome Completo" required="">
-                          </fieldset>
-                        </div>
-                        <div class="col-lg-6 col-md-12 col-sm-12">
-                          <fieldset>
-                            <input name="email" type="email" class="form-control" id="email" placeholder="Endereço de E-Mail" required="">
-                          </fieldset>
-                        </div>
-                        <div class="col-lg-12">
-                          <fieldset>
-                            <textarea name="message" rows="6" class="form-control" id="message" placeholder="Sua Mensagem" required=""></textarea>
-                          </fieldset>
-                        </div>
-                        <div class="col-lg-12">
-                          <fieldset>
+            <form action="https://formspree.io/f/your-form-id" method="POST">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <fieldset>
+                            <input name="name" type="text" class="form-control" id="name" placeholder="Nome Completo" required>
+                        </fieldset>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <fieldset>
+                            <input name="email" type="email" class="form-control" id="email" placeholder="Endereço de E-Mail" required>
+                        </fieldset>
+                    </div>
+                    <div class="col-lg-12">
+                        <fieldset>
+                            <textarea name="message" rows="6" class="form-control" id="message" placeholder="Sua Mensagem" required></textarea>
+                        </fieldset>
+                    </div>
+                    <div class="col-lg-12">
+                        <fieldset>
                             <button type="submit" id="form-submit" class="main-button">Enviar Mensagem</button>
-                          </fieldset>
-                        </div>
-                      </div>
-                    </form>
+                        </fieldset>
+                    </div>
                 </div>
-            </div>
+            </form>
+            
             <!-- ***** Formulário de Contato Fim ***** -->
         </div>
     </div>
@@ -692,7 +688,45 @@ https://templatemo.com/tm-535-softy-pinko
     
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>
+<script>
+    const nodemailer = require('nodemailer');
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
 
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.post('/send-email', (req, res) => {
+    const { name, email, message } = req.body;
+
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'paulohbirro@gmail.com',  // Seu email
+            pass: 'Birr@&1103'          // Sua senha ou token
+        }
+    });
+
+    const mailOptions = {
+        from: email,
+        to: 'youremail@gmail.com',  // Seu email
+        subject: 'Nova mensagem de contato',
+        text: `Nome: ${name}\nEmail: ${email}\nMensagem: ${message}`
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return res.status(500).send(error.toString());
+        }
+        res.status(200).send('Mensagem enviada com sucesso!');
+    });
+});
+
+app.listen(3000, () => {
+    console.log('Servidor rodando na porta 3000');
+});
+
+</script>
   </body>
 </html>
 
