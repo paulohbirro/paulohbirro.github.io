@@ -76,7 +76,7 @@
 
 .responsive-logo {
     width: 100%;
-    max-width: 150px; /* Tamanho máximo */
+    max-width: 230px; /* Tamanho máximo */
     height: auto; /* Mantém a proporção da imagem */
     display: block;
     margin: 0 auto; /* Centraliza a imagem */
