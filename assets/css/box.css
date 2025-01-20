@@ -221,3 +221,43 @@
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
+.product-card {
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #fff;
+    padding: 20px;
+    margin: 15px 0; /* Espaçamento vertical entre os cards */
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-card i {
+    color: #5a67d8; /* Cor do ícone */
+}
+
+.product-card .card-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #333;
+}
+
+.product-card .card-text {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Ajuste do espaçamento horizontal para colunas */
+.row {
+    row-gap: 30px; /* Espaçamento vertical entre as linhas */
+}
+
+.col-lg-4, .col-md-6 {
+    padding: 0 15px; /* Espaçamento horizontal entre os cards */
+}
