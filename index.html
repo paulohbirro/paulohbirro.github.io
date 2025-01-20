@@ -45,14 +45,13 @@ https://templatemo.com/tm-535-softy-pinko
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
+                    <!-- Logo -->
                     <a href="#" class="logo">
-                        <img src="assets/images/logo.png" alt="Logo" >
+                        <img src="assets/images/logo.png" alt="Logo">
                     </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
+                
+                    <!-- Menu -->
                     <ul class="nav">
-                        
                         <li><a href="#features" class="menu-item">Quem Somos</a></li>
                         <li><a href="#work-process" class="menu-item">Fábrica</a></li>
                         <li><a href="#testimonials" class="menu-item">White Label</a></li>
@@ -60,11 +59,13 @@ https://templatemo.com/tm-535-softy-pinko
                         <li><a href="#pricing-plans" class="menu-item">Cursos</a></li>
                         <li><a href="#contact-us" class="menu-item">Contato</a></li>
                     </ul>
-                    <a class="menu-trigger">
-                        <span>Menu</span>
+                
+                    <!-- Ícone de Hambúrguer -->
+                    <a href="javascript:void(0);" class="menu-trigger" onclick="toggleMenu()">
+                        <span>&#9776;</span>
                     </a>
-                    <!-- ***** Menu End ***** -->
                 </nav>
+                
             </div>
         </div>
     </div>
@@ -665,7 +666,14 @@ https://templatemo.com/tm-535-softy-pinko
             </div>
         </div>
     </footer>
+    <script>
+    function toggleMenu() {
+        const menu = document.querySelector('.nav');
+        menu.classList.toggle('show');
+    }
+    </script>
     
+
     <!-- jQuery -->
     <script src="assets/js/jquery-2.1.0.min.js"></script>
 
