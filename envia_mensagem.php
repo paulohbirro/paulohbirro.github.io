@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['name'], $_GET['email'], 
     $message = htmlspecialchars($_GET['message']);
 
     // Definindo o destinatário do email
-    $to = "contato@seudominio.com";  // Altere para o seu email
+    $to = "paulohbirro.github.io";  // Altere para o seu email
     $subject = "Nova Mensagem de Contato";
 
     // Corpo do email
