@@ -36,6 +36,7 @@
     transition: background-color 0.3s ease;
 }
 
+
 /* Efeito de hover e estilo do link */
 .nav a.menu-item:hover {
     background-color: #007bff; /* Altere para a cor que desejar */
